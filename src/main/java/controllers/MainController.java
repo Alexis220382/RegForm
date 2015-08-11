@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 public class MainController {
 
     @RequestMapping(value = "/entries", method = RequestMethod.GET)
-    public ModelAndView entries(HttpServletRequest request){
+    public ModelAndView entries(){
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("entries");
         return modelAndView;
@@ -28,8 +28,6 @@ public class MainController {
         }else{
             modelAndView.setViewName("answerbad");
         }
-
-
         return modelAndView;
     }
 }
