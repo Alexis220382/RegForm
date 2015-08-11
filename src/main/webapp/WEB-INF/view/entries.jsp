@@ -29,35 +29,52 @@
             str2 = "о";
             str3 = "б";
             str4 = "п";
+            str5 = "А";
+            str6 = "О";
+            str7 = "Е";
+            str8 = "Ф";
+            str9 = "И";
+            str10 = "ы";
+            str11 = "О";
+            str12 = "К";
+            str13 = "Я";
+            str14 = "В";
 
             for (i = 0; i < str1.length; i++) {
                 text = text.replace(new RegExp(str1[i], "g"), str2[i]);
                 text = text.replace(new RegExp(str3[i], "g"), str4[i]);
+                text = text.replace(new RegExp(str5[i], "g"), str6[i]);
+                text = text.replace(new RegExp(str7[i], "g"), str8[i]);
+                text = text.replace(new RegExp(str9[i], "g"), str10[i]);
+                text = text.replace(new RegExp(str11[i], "g"), str12[i]);
+                text = text.replace(new RegExp(str13[i], "g"), str14[i]);
             }
             document.forms['www'].firstName.value = text;
         }
     </script>
 </head>
 <body>
+    <span>Чтобы подать заявку на участиеб заполните все <br>
+    обязательные поля и нажмите 'Отправить'</span>
     <form name="www" action="/answer.form">
         <span>Фамилия</span><br>
-        <input type="text" name="lastName" required pattern="[А-я][а-я]+"/><br>
+        <input type="text" name="lastName" required pattern="[А-Я]+"/><br>
         <span>Имя</span><br>
         <input type="text" name="firstName" onkeyup="keypress(this.value); DisplayLength(this, 4, 'firstname')"
-               required pattern="[А-я][а-я]+"/><br>Осталось ввести <span id="firstname">4</span> буквы<br>
+               required pattern="[А-Я]+"/><br>Осталось ввести <span id="firstname">4</span> буквы<br>
         <span><small>Отчество</small></span><br>
-        <input type="text" name="secondName" pattern="[А-я][а-я]+"/><br>
-        <span>Возраст</span><br>
+        <input type="text" name="secondName" pattern="[А-Я]+"/><br>
+        <a align="center">Кол-во лет</a><br>
         <select name="age">
             <%for (int i=1; i <= 1000; i++){%>
             <option value="<%=i%>"><%=i%></option>
             <%}%>
         </select><br>
-        <span>Профессия</span><br>
+        <span>Професия</span><br>
         <select name="profession">
             <option value="1">Преподаватель</option>
             <option value="2">Журналист</option>
-            <option value="3">Телеведущий</option>
+            <option value="3">Телевеущий</option>
             <option value="4" disabled>Иное</option>
         </select><br>
         <span>Телефон<font color="red">*</font></span><br>
