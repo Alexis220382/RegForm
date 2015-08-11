@@ -57,15 +57,18 @@
     <span>Чтобы подать заявку на участиеб заполните все <br>
     обязательные поля и нажмите 'Отправить'</span>
     <form name="www" action="/answer.form">
-        <span>Фамилия</span><br>
-        <input type="text" name="lastName" required pattern="[А-Я]+"/><br>
-        <span>Имя</span><br>
+        <span>Фамилия<font color="red">*</font></span><br>
+        <input type="text" name="lastName" pattern="[А-Яа-я]+"/><br>
+        <span>Имя<font color="red">*</font></span><br>
         <input type="text" name="firstName" onkeyup="keypress(this.value); DisplayLength(this, 4, 'firstname')"
-               required pattern="[А-Я]+"/><br>Осталось ввести <span id="firstname">4</span> буквы<br>
-        <span><small>Отчество</small></span><br>
-        <input type="text" name="secondName" pattern="[А-Я]+"/><br>
+               pattern="[А-Яа-я]+"/><br>Осталось ввести <span id="firstname">4</span> буквы<br>
+        <span><small>Отчество</small><font color="red">*</font></span><br>
+        <input type="text" name="secondName" pattern="[А-Яа-я]+"/><br>
         <a align="center">Кол-во лет</a><br>
         <select name="age">
+            <%for (int i=-50; i < 0; i++){%>
+            <option value="<%=i%>"><%=i%></option>
+            <%}%>
             <%for (int i=1; i <= 1000; i++){%>
             <option value="<%=i%>"><%=i%></option>
             <%}%>
@@ -80,7 +83,7 @@
         <span>Телефон<font color="red">*</font></span><br>
         <span>+375</span>
         <input type="text" name="phone" onkeyup="DisplayLength(this, 5, 'phone')"
-               required pattern="[0-9]+"/><br>Осталось ввести <span id="phone">5</span> цифр<br>
+               pattern="[0-9]+"/><br>Осталось ввести <span id="phone">5</span> цифр<br>
         <button type="submit"><p class="clip">Отправить</p></button>
     </form>
 </body>
