@@ -23,8 +23,7 @@ public class MainController {
 
         if (request.getParameter("lastName").length() != 0
                 && request.getParameter("firstName").length() != 0
-                && request.getParameter("secondName").length() != 0
-                && request.getParameter("phone").length() != 0){
+                && request.getParameter("secondName").length() != 0){
             modelAndView.setViewName("answergood");
         }else{
             modelAndView.setViewName("answerbad");
