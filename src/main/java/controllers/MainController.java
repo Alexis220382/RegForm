@@ -23,10 +23,14 @@ public class MainController {
 
         if (request.getParameter("lastName").length() != 0
                 && request.getParameter("firstName").length() != 0
+<<<<<<< HEAD
                 && request.getParameter("secondName").length() != 0
                 && request.getParameter("lastName").toUpperCase().equals(request.getParameter("lastName"))
                 && request.getParameter("firstName").toUpperCase().equals(request.getParameter("firstName"))
                 && request.getParameter("secondName").toUpperCase().equals(request.getParameter("secondName"))){
+=======
+                && request.getParameter("secondName").length() != 0){
+>>>>>>> origin/master
             modelAndView.setViewName("answergood");
         }else{
             modelAndView.setViewName("answerbad");
