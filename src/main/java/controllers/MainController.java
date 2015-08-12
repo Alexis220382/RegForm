@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 public class MainController {
 
     @RequestMapping(value = "/entries", method = RequestMethod.GET)
-    public ModelAndView entries(HttpServletRequest request){
+    public ModelAndView entries(){
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("entries");
         return modelAndView;
@@ -21,13 +21,16 @@ public class MainController {
     public ModelAndView answer(HttpServletRequest request){
         ModelAndView modelAndView = new ModelAndView();
 
-        if (request.getParameter("secondName").length() == 0){
+        if (request.getParameter("lastName").length() != 0
+                && request.getParameter("firstName").length() != 0
+                && request.getParameter("secondName").length() != 0
+                && request.getParameter("lastName").toUpperCase().equals(request.getParameter("lastName"))
+                && request.getParameter("firstName").toUpperCase().equals(request.getParameter("firstName"))
+                && request.getParameter("secondName").toUpperCase().equals(request.getParameter("secondName"))){
             modelAndView.setViewName("answergood");
         }else{
             modelAndView.setViewName("answerbad");
         }
-
-
         return modelAndView;
     }
 }
