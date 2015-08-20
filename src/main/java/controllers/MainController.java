@@ -34,12 +34,12 @@ public class MainController {
 
 
             String SMPT_HOSTNAME = "smtp.gmail.com";
-            final String USERNAME = "220382alexis@gmail.com";
-            final String PASSWORD = "220382lesha";
+            final String USERNAME = "username for account email from";
+            final String PASSWORD = "password for account email from";
 
             Properties props = new Properties();
             props.put("mail.smtp.host", SMPT_HOSTNAME);
-            props.put("mail.from","220382alexis@gmail.com");
+            props.put("mail.from","email from");
             props.put("mail.smtp.starttls.enable", "true");
             props.put("mail.smtp.auth", "true");
             props.put("mail.debug", "true");
